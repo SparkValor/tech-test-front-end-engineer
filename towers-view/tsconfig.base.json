@@ -19,7 +19,9 @@
     "module": "es2020",
     "lib": ["es2020", "dom"],
     "useDefineForClassFields": false,
-    "paths": {},
+    "paths": {
+      "tower": ["libs/tower/src/index.ts"]
+    },
     "rootDir": "."
   },
   "angularCompilerOptions": {
