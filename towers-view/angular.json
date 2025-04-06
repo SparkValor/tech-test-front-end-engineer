@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "towers-view:build:production"
+              "buildTarget": "towers-view:build:production"
             },
             "development": {
-              "browserTarget": "towers-view:build:development"
+              "buildTarget": "towers-view:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "towers-view:build"
+            "buildTarget": "towers-view:build"
           }
         },
         "test": {
