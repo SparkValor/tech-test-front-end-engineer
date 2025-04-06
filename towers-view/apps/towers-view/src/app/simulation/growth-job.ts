@@ -1,10 +1,8 @@
-
 export class GrowthJob {
   private readonly maxPercentage = 100;
   private readonly incrementStep = 10;
 
-  constructor(public name: string, public progressPercentage: number) {
-  }
+  constructor(public name: string, public progressPercentage: number) {}
 
   public increment() {
     if (this.progressPercentage + this.incrementStep >= this.maxPercentage) {

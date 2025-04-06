@@ -1,0 +1,93 @@
+{
+  "name": "towers-view",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:application": {
+      "strict": true
+    }
+  },
+  "sourceRoot": "apps/towers-view/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "options": {
+        "outputPath": "dist/apps/towers-view",
+        "index": "apps/towers-view/src/index.html",
+        "polyfills": ["apps/towers-view/src/polyfills.ts"],
+        "tsConfig": "apps/towers-view/tsconfig.app.json",
+        "assets": [
+          "apps/towers-view/src/favicon.ico",
+          "apps/towers-view/src/assets"
+        ],
+        "styles": ["apps/towers-view/src/styles.css"],
+        "scripts": [],
+        "browser": "apps/towers-view/src/main.ts"
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/towers-view/src/environments/environment.ts",
+              "with": "apps/towers-view/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "towers-view:build:production"
+        },
+        "development": {
+          "buildTarget": "towers-view:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "towers-view:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/towers-view/src/test.ts",
+        "polyfills": "apps/towers-view/src/polyfills.ts",
+        "tsConfig": "apps/towers-view/tsconfig.spec.json",
+        "karmaConfig": "apps/towers-view/karma.conf.js",
+        "assets": [
+          "apps/towers-view/src/favicon.ico",
+          "apps/towers-view/src/assets"
+        ],
+        "styles": ["apps/towers-view/src/styles.css"],
+        "scripts": []
+      }
+    }
+  }
+}

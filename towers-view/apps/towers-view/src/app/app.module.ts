@@ -6,16 +6,9 @@ import { AppComponent } from './app.component';
 import { TowerService } from './simulation/tower.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    TowerService
-  ],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [TowerService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

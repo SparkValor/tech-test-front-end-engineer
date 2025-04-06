@@ -1,11 +1,10 @@
-import { GrowthJob } from "./growth-job";
-import { GrowthTray } from "./growth-tray";
-import { Slot } from "./slot";
-import { Tower } from "./tower";
+import { GrowthJob } from './growth-job';
+import { GrowthTray } from './growth-tray';
+import { Slot } from './slot';
+import { Tower } from './tower';
 
 export class TowerProgressSimulator {
-  constructor() {
-  }
+  constructor() {}
 
   public incrementProgress(towers: Tower[]): Tower[] {
     let newTowers: Tower[] = [];
@@ -21,11 +20,14 @@ export class TowerProgressSimulator {
         from a servers
       */
       const newTower = this.copyTower(tower);
-      newTower.getGrowthJobs().forEach(x => x.increment());
+      newTower.getGrowthJobs().forEach((x) => x.increment());
 
-      newTower.slots.forEach(slot => {
+      newTower.slots.forEach((slot) => {
         if (slot.growthTray?.growthJob?.isFinished()) {
-          slot.growthTray.growthJob = new GrowthJob(this.getRandomGrowthJobName(), 0);
+          slot.growthTray.growthJob = new GrowthJob(
+            this.getRandomGrowthJobName(),
+            0
+          );
         }
       });
 
@@ -41,7 +43,7 @@ export class TowerProgressSimulator {
     const min = 0;
     const max = growthJobNames.length - 1;
 
-    const randomIndex = Math.floor(Math.random() * (max - min) + min);;
+    const randomIndex = Math.floor(Math.random() * (max - min) + min);
 
     return growthJobNames[randomIndex];
   }
@@ -55,14 +57,17 @@ export class TowerProgressSimulator {
       let newGrowthTray: GrowthTray | null = null;
       let newGrowthJob: GrowthJob | null = null;
       if (oldSlot.growthTray != null) {
-
         if (oldSlot.growthTray.growthJob != null) {
           newGrowthJob = new GrowthJob(
             oldSlot.growthTray.growthJob.name,
-            oldSlot.growthTray.growthJob.progressPercentage);
+            oldSlot.growthTray.growthJob.progressPercentage
+          );
         }
 
-        newGrowthTray = new GrowthTray(oldSlot.growthTray.identifier, newGrowthJob);
+        newGrowthTray = new GrowthTray(
+          oldSlot.growthTray.identifier,
+          newGrowthJob
+        );
       }
 
       let newSlot = new Slot(oldSlot.number, newGrowthTray);
