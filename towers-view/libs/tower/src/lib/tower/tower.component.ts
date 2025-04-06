@@ -9,10 +9,9 @@ import { CommonModule } from '@angular/common';
 })
 export class TowerComponent implements OnInit {
 
-  @Input() number: Number;
+  @Input() number?: number;
 
   constructor() { 
-    this.number = 1;
   }
 
   ngOnInit(): void {

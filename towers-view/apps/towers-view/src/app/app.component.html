@@ -1,4 +1,10 @@
 Make me nice
+<!-- <lib-menu [menuItems]="towerData" itemName="Tower"></lib-menu> -->
+<nav>
+  @for (tower of towerData; track tower.number) {
+    <button type="button" routerLink="/tower/{{tower.number}}">Tower {{ tower.number }}</button>
+  }
+</nav>
 <router-outlet></router-outlet>
 <pre>
   {{ towerService.towerData$ | async | json }}
