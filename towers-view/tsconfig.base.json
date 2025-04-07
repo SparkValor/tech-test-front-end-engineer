@@ -21,7 +21,8 @@
     "useDefineForClassFields": false,
     "paths": {
       "menu": ["libs/menu/src/index.ts"],
-      "tower": ["libs/tower/src/index.ts"]
+      "tower": ["libs/tower/src/index.ts"],
+      "tower-slot": ["libs/tower-slot/src/index.ts"]
     },
     "rootDir": "."
   },
