@@ -20,6 +20,8 @@
     "lib": ["es2020", "dom"],
     "useDefineForClassFields": false,
     "paths": {
+      "growth-job": ["libs/growth-job/src/index.ts"],
+      "growth-tray": ["libs/growth-tray/src/index.ts"],
       "menu": ["libs/menu/src/index.ts"],
       "tower": ["libs/tower/src/index.ts"],
       "tower-slot": ["libs/tower-slot/src/index.ts"]
