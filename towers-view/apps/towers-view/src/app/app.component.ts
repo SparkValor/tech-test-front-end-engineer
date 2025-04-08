@@ -11,8 +11,8 @@ import { Tower } from './simulation/tower';
 export class AppComponent implements OnDestroy {
   title = 'towers-view';
 
-  towers? : Tower[];
-  selected: number = 0;
+  towers : Tower[] = [];
+  selected: number = 1;
 
   towerSubscription;
 

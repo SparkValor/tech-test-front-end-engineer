@@ -9,5 +9,6 @@ import { GrowthJob } from 'apps/towers-view/src/app/simulation/growth-job';
   styleUrl: './growth-job.component.css',
 })
 export class GrowthJobComponent {
-  @Input() growthJob?: GrowthJob;
+  @Input()
+  growthJob?: GrowthJob;
 }

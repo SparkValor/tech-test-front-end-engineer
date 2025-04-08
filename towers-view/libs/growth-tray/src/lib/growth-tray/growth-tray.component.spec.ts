@@ -18,4 +18,9 @@ describe('GrowthTrayComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a title', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.title')?.textContent).toContain('GrowthTray ');
+  });
 });

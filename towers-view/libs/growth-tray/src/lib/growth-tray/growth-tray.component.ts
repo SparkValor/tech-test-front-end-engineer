@@ -10,5 +10,6 @@ import { GrowthTray } from 'apps/towers-view/src/app/simulation/growth-tray';
   styleUrl: './growth-tray.component.css',
 })
 export class GrowthTrayComponent {
-  @Input() growthTray?: GrowthTray;
+  @Input()
+  growthTray?: GrowthTray;
 }

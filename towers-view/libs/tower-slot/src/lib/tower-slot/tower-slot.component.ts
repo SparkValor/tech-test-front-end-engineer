@@ -10,6 +10,6 @@ import { Slot } from 'apps/towers-view/src/app/simulation/slot';
   styleUrl: './tower-slot.component.css',
 })
 export class TowerSlotComponent {
-
-  @Input() slot?: Slot;
+  @Input()
+  slot?: Slot;
 }

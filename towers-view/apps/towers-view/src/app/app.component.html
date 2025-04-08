@@ -1,9 +1,6 @@
-<!-- <lib-menu [numItems]="towers.length" itemName="Tower"></lib-menu> -->
 <nav>
   @for (tower of towers; track tower.number ) {
     <button type="button" (click)="selectTower(tower.number)">Tower {{ tower.number }}</button>
   }
 </nav>
-@if(towers) {
-  <tower [tower]="towers[selected - 1]"></tower>
-}
+<tower [tower]="towers[selected - 1]"></tower>
