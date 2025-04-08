@@ -1,1 +1,2 @@
-<p>GrowthJob works!</p>
+<p class="title">GrowthJob: {{ growthJob?.name }}</p>
+<div [ngStyle]="{'width': growthJob?.progressPercentage + '%'}" class="progress-bar"></div>

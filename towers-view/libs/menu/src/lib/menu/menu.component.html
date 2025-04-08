@@ -1,6 +1,5 @@
-<p>Menu works!</p>
 <nav>
     @for (item of menuItems; track item) {
-      <button type="button">{{ itemName }} {{ item }}</button>
+      <button type="button">{{ itemName }} {{ item.number }}</button>
     }
 </nav>

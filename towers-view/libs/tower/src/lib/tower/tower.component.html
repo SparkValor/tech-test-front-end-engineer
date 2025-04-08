@@ -1,1 +1,6 @@
-<p>Tower {{ number }} works!</p>
+<p class="title">Tower {{ tower?.number }}</p>
+<section class="slot-list">
+    @for (slot of tower?.slots; track slot.number) {
+        <lib-tower-slot [slot]="slot"></lib-tower-slot>
+    }
+</section>

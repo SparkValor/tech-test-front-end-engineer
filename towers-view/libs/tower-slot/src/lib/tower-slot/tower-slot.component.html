@@ -1,1 +1,6 @@
-<p>TowerSlot works!</p>
+<p class="title">Slot {{ slot?.number }}</p>
+@if (slot && slot.growthTray) {
+    <lib-growth-tray [growthTray]="slot.growthTray"></lib-growth-tray>
+} @else {
+    <span>Empty</span>
+}

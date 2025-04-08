@@ -1,0 +1,12 @@
+:host {
+    background-color: rgb(118, 128, 128);
+    display: block;
+    height: 100%;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

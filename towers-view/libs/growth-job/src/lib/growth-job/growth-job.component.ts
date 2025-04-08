@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { GrowthJob } from 'apps/towers-view/src/app/simulation/growth-job';
 
 @Component({
   selector: 'lib-growth-job',
@@ -7,4 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './growth-job.component.html',
   styleUrl: './growth-job.component.css',
 })
-export class GrowthJobComponent {}
+export class GrowthJobComponent {
+  @Input() growthJob?: GrowthJob;
+}

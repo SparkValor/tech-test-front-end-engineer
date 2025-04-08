@@ -1,1 +1,4 @@
-<p>GrowthTray works!</p>
+<p class="title">GrowthTray {{ growthTray?.identifier }}</p>
+@if (growthTray && growthTray.growthJob) {
+    <lib-growth-job [growthJob]="growthTray.growthJob"></lib-growth-job>
+}

@@ -9,11 +9,13 @@ import { CommonModule } from '@angular/common';
   standalone: true
 })
 export class MenuComponent {
-  @Input() menuItems: object[];
-  @Input() itemName: string;
+  @Input() numItems: number = 0;
+  @Input() itemName: string = '';
+
+  menuItems;
 
   constructor() {
-    this.itemName = '';
+
     this.menuItems = [{number: 1 }, {number: 2}];
   }
 }

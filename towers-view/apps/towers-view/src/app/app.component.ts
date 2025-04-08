@@ -11,16 +11,23 @@ import { Tower } from './simulation/tower';
 export class AppComponent implements OnDestroy {
   title = 'towers-view';
 
-  towerData: Tower[];
+  towers? : Tower[];
+  selected: number = 0;
 
-  subscription;
+  towerSubscription;
+
 
   constructor(public towerService: TowerService) {
-    this.towerData = [];
-    this.subscription = towerService.towerData$.subscribe((data) => this.towerData = data);
+    this.towerSubscription = towerService.towerData$.subscribe((towerData) => {
+      this.towers = towerData;
+    });
+  }
+
+  selectTower(selected: number) {
+    this.selected = selected;
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.towerSubscription.unsubscribe();
   }
 }
