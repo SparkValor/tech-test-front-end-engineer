@@ -1,3 +1,23 @@
+# Discussion of my solution
+
+After reading up on Nx and RxJS to learn more about those and drawing down some concepts for the components I wanted to use, I forked the repo into my own GitHub account.
+
+I started with updating the workspace to the newest version of Angular. Then I installed Nx and had it converted the workspace into a monorepo.
+Using the Nx generators I created the necessary components for the given data structure.
+I also added a MenuComponent and thought about adding a component for a progress bar, but discarded those in the end.
+
+I had the idea to navigate between the towers using routes, but discarded the idea, as I had trouble passing the data down to the tower component.
+In the end I kept the solution very simple, just using some nested components and using a 'selectedTower' value to switch.
+
+After some code clean up, I added a few simple tests. But I didn't go far with them, as I had already spent plenty of time on the task.
+
+A few things I would do differently:
+ - due to using the data structures from the simulation folder there is a two-way interdependency between the app and the libraries. So it would be better to put the simulation in its own library
+ - add more tests
+ - Have reusable UI components
+ - add module federation
+
+
 # IGS Front-end Engineer Tech Test
 
 One of the core functions of the IGS software is to automate the growing of plants. The growing process happens in what we call a **Tower**.
